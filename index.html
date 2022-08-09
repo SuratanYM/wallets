@@ -1,10 +1,176 @@
 <!DOCTYPE html>
-<html lang="th">
-<div class="iframe-wrapper">
-  <iframe src="https://script.google.com/macros/s/AKfycbzrp7jBsNxENjcu117sumqEOSehKLvEFro2lvNjDvj1ZWp2q7gIBA9d-Ly1AH7fOBCu/exec"></iframe>
-</div>
-<div class="bottom-wrapper">
-  Bottom Wrapper
-</div>
-</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<style>
 
+     @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap');
+    *{
+        font-family: 'Prompt', cursive;
+        color: #0053a6;
+    }
+
+    body{
+        background-image: url('https://sv1.picz.in.th/images/2022/08/08/XAfZQq.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .button{
+      background-color: transparent;
+      border: none;
+    }
+    img{
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+</style>
+</head>
+<body>
+<div class="container">
+   <div> <img src="https://sv1.picz.in.th/images/2022/08/08/XD2GZn.png" ></div>
+
+  <div class="row justify-content-center align-items-center">
+    <div class="col-sm-8 col-md-6 col-lg-4 p-4 rounded shadow" style="background-color: #edf9fd">
+
+    <div> <img src="https://sv1.picz.in.th/images/2022/08/08/XDC98Z.png" width="25%"></div>
+
+     <div class="text-center "> <h2>ลงทะเบียนยืนยันตัวตน</h2></div>
+      <form id="myForm" onsubmit="submitForm(this)">
+
+        
+
+        <div class="mb-3 text-center">
+          <label class="form-label fw-bold "> กรอกชื่อ-สกุล :</label>
+          <input class="form-control border-2 border-info rounded" type="text" id="fname" name="fname" placeholder="ชื่อ-สกุล(ตรงกับบัญชีธนาคารเท่านั้น)" required>
+        </div>
+
+        <div class="mb-3 text-center">
+          <label class="form-label fw-bold "> เบอร์โทรศัพท์ :</label>
+          <input class="form-control border-2 border-info rounded" type="text" id="phone" name="phone" placeholder="ต้องตรงกับ TRUE Wallet เท่านั้น" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">ธนาคาร</label>
+          <select class="form-select" id="status" name="status" required>
+            <option value="" selected disabled>เลือกธนาคาร</option>
+            <option value="ธนาคารกรุงเทพ">ธนาคารกรุงเทพ</option>
+            <option value="ธนาคารกรุงศรีอยุธยา">ธนาคารกรุงศรีอยุธยา</option>
+            <option value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
+            <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
+            <option value="ธนาคารไทยพาณิชย์">ธนาคารไทยพาณิชย์</option>
+            <option value="ธนาคารทหารไทยธนชาติ">ธนาคารทหารไทยธนชาติ</option>
+            <option value="ธนาคารออมสิน">ธนาคารออมสิน</option>
+            <option value="ธนาคารสแตนดาร์ดชาร์เตอร์">ธนาคารสแตนดาร์ดชาร์เตอร์</option>
+            <option value="ธนาคารยูโอบี">ธนาคารยูโอบี</option>
+            <option value="CIMB Thai">CIMB Thai</option>
+            <option value="Citibank Thailand">Citibank Thailand</option>
+            <option value="ธนาคารเกียรตินาคิน">ธนาคารเกียรตินาคิน</option>
+          </select>
+        </div>
+
+        <div class="mb-3 text-center">
+          <input class="form-control border-2 border-info rounded" type="text" id="province" name="province" placeholder="เลขบัญชีธนาคาร" required>
+        </div>
+
+        <div class="mb-3">
+              <label class="form-check-labek fw-bold"> รู้จักเราจากช่องทางใด :</label>
+
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" id="word" name="word" value="Line" required>
+                  <label class="form-check-label">Line</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" id="word" name="word" value="Facebook" required>
+                  <label class="form-check-label">Facebook</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" id="word" name="word" value="Google" required>
+                  <label class="form-check-label">Google</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" id="word" name="word" value="Tiktok" required>
+                  <label class="form-check-label">Tiktok</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" id="word" name="word" value="Instagram" required>
+                  <label class="form-check-label">Instagram</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" id="word" name="word" value="Twitter" required>
+                  <label class="form-check-label">Twitter</label>
+              </div>
+        </div>
+        <button type="submit" class="button"><img src="https://sv1.picz.in.th/images/2022/08/08/XDnY2S.png" width="40%"></button>
+        </form>
+        
+    </div>
+  </div>
+
+        <div class="my-3">
+            <div class="form-group text-center">
+                <h6 class="text-white">Copyright © 2022 , All rights reserved. All Wallet Asia </h6>
+            </div>
+        </div>
+
+</div>
+<div class="container">
+          <table id="data-table" class="table table-striped table-hover table-bordered bg-white" style="width:100%">
+			</table>
+        </div>
+    <script>
+        function submitForm(obj){
+            event.preventDefault()
+            google.script.run.withSuccessHandler((data)=>{
+              document.querySelector('#myForm').reset()
+            console.log(data.fname)
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'ยืนยันข้อมูล '+data.fname+' สำเร็จ',
+                title: 'แจ้งโค้ด "FREE50AB" กับแอดมิน',
+                showConfirmButton: false,
+                timer: 6000
+                })
+            }).saveData(obj)
+        }
+     window.onload = ()=>{
+       //google.script.run.withSuccessHandler(showData).getData(); //ปิดการโชว์รายชื่อผู้ลงนาม####################################################
+
+  function showData(dataArray){
+    $(document).ready(function(){
+      $('#data-table').DataTable({
+        data: dataArray,
+        destroy: true,
+        // pageLength: 50,
+        // searching: false,
+        // paging: false,
+        // ordering: false,
+        // info: false,
+        columns: [
+          {"title":"วันที่"},
+          {"title":"ชื่อ สกุล"},
+          {"title":"ข้อความลงนาม"},
+          {"title":"สถานะ"},
+          {"title":"จังหวัด"},
+        ],
+        language: { url: "//cdn.datatables.net/plug-ins/1.10.24/i18n/Thai.json" }
+      });
+    });
+  }
+     }
+
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
